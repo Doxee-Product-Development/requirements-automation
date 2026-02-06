@@ -1,0 +1,68 @@
+---
+id: "9d9f6e7a-5cfb-498d-8d0e-d7ce5197376f"
+title: "Manage Files (FO) Batch Workflow Task Reference"
+slug: "manage-files-fo-batch-workflow-task-reference"
+category: "Doxee Platform Batch Workflows Task Reference"
+category_path:
+  - "Product guides"
+  - "Batch Workflows"
+  - "Batch Workflows Reference Guides"
+  - "Doxee Platform Batch Workflows Task Reference"
+status: "published"
+content_type: "block"
+version: 2
+public_version: 2
+created_at: "2025-12-08T09:37:34.409Z"
+modified_at: "2026-01-19T12:04:49.429Z"
+authors:
+  - name: "Migration Team"
+    email: "d360migrationteam@kovai.co"
+source_url: "https://docs.doxee.com/docs/en/manage-files-fo-batch-workflow-task-reference"
+synced_at: "2026-01-28T20:48:56.596Z"
+checksum: "72cd31bf11545762"
+---
+
+## Description
+The **Manage files (FO) **task allows to sort the content of FO packages received from SDI between Doxee Platform 3 and Doxee Platform 2 applications.
+
+## Principles of operation
+The Manage files (FO) task consumes processes the content of FO packages and sorts them according to the type of included files:
+
+- **Doxee Platform 2 passive invoices **are not processed. They are copied to the output of the task.
+
+- **Doxee Platform 2 receipts **are not processed. They are copied to the output of the task.
+
+- **Doxee Platform 3 passive invoices **are sent to the DP3 file system and Passive Electronic Invoicing is triggered by Kafka to process them. They are not present in the output of the task.
+
+- **Doxee Platform 3 receipts **are sent to the DP3 file system and Active Electronic Invoicing is triggered by Kafka to process them. They are copied to the output of the task.
+
+> Note
+
+Doxee Platform 3 receipts may be archived to Legal Electronic Archiving through DP2 applications.
+
+- **FO index **counters are updated with the number of Doxee Platform 2 passive invoices.
+
+Workflows which contain the Manage files (FO) task may be activated through a [Batch FTP ingress](/doxee-platform/docs/batch-ftp-ingress-resource-reference) configured to include FO file patterns.
+
+## Configuration
+**![](data:image/png;base64,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)**
+
+- In the **Alias **field, enter the name of the task that will be displayed in the workflow.
+
+## Input
+The expected input of the Manage files (FO) task is an **FO package **(*.zip.p7m.enc *format of received from SDI or *.zip *format if received manually).
+
+## Output
+The output of the Manage files (FO) task is a *.zip *file with the filename structure **${fo-package-name-without-extension}.zip**.
+
+It contains the following files:
+
+- **Passive invoices **for Doxee Platform 2
+
+- **Receipts **for Doxee Platform 2
+
+- **Receipts **for Doxee Platform 3
+
+- **FO index **with updated counters of Doxee Platform 2 passive invoices
+
+ p[data-block-id] {font-size:1rem;} ul li p[data-block-id] {margin-bottom: 0;} ul[data-type="taskList"] li div p[data-block-id] {margin-bottom: 0;} ol li p[data-block-id] {margin-bottom: 0;} table tbody th p[data-block-id] { margin-bottom: 0;} blockquote p[data-block-id] {margin-bottom: 0 !important;}  p[data-block-id]:empty::after {content: "\00A0";}

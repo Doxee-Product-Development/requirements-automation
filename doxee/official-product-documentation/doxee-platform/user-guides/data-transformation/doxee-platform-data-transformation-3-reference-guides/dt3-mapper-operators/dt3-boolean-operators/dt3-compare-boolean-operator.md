@@ -1,0 +1,97 @@
+---
+id: "57f1de30-9307-493b-9d44-3f81fe306464"
+title: "DT3 Compare (Boolean) Operator"
+slug: "dt3-compare-boolean-operator"
+category: "DT3 Boolean Operators"
+category_path:
+  - "Product guides"
+  - "Data Transformation"
+  - "Doxee Platform Data Transformation 3 Reference Guides"
+  - "DT3 Mapper Operators"
+  - "DT3 Boolean Operators"
+status: "published"
+content_type: "block"
+version: 2
+public_version: 2
+created_at: "2025-12-10T17:33:10.299Z"
+modified_at: "2026-01-13T14:39:46.318Z"
+authors:
+  - name: "Migration Team"
+    email: "d360migrationteam@kovai.co"
+source_url: "https://docs.doxee.com/docs/en/dt3-compare-boolean-operator"
+synced_at: "2026-01-28T20:52:17.034Z"
+checksum: "6fdd22314e04249a"
+---
+
+## Description
+The **Compare **operator allows to compare two numeric input values using the defined comparison settings.
+
+## **Input**
+**Input**
+
+**Data type**
+
+**Description**
+
+**in0**
+
+Number
+
+First numeric value that you want to compare
+
+**in1**
+
+Number
+
+Second numeric value that you want to compare
+
+## **Output**
+**Output**
+
+**Data type**
+
+**Description**
+
+**out0**
+
+Boolean
+
+- ***true ***if the comparison settings are matched
+
+- ***false ***in all other cases
+
+## **Settings**
+**![](data:image/png;base64,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)**
+
+- From the **Compare options **drop-down menu, select the operator that you want to use to compare input values. The available options are:
+
+**=**
+
+- **&lt;=**
+
+- **&gt;=**
+
+- **&lt;**
+
+- **&gt;**
+
+- **!=**
+
+- Click **Apply **to confirm.
+
+## Special cases
+In special cases, the operator behaves as follows:
+
+**Case**
+
+**Behavior**
+
+**NULL input (no input)**
+
+The operator considers a NULL input as ***0 ***. The system logs a warning event.
+
+**NULL input value**
+
+The operator considers a NULL input value as ***0 ***. The system logs a warning event.
+
+ p[data-block-id] {font-size:1rem;} ul li p[data-block-id] {margin-bottom: 0;} ul[data-type="taskList"] li div p[data-block-id] {margin-bottom: 0;} ol li p[data-block-id] {margin-bottom: 0;} table tbody th p[data-block-id] { margin-bottom: 0;} blockquote p[data-block-id] {margin-bottom: 0 !important;}  p[data-block-id]:empty::after {content: "\00A0";}
